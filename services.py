@@ -8,7 +8,15 @@ from config import (
 )
 from models import EstacaoRepository, Sessao
 from protocols import ocpp_start_transaction, ocpp_stop_transaction
-from ui import subcabecalho # We need this for verbose simulation
+
+
+def linha(char="-", largura=62):
+    print(char * largura)
+
+def subcabecalho(titulo: str):
+    linha("-")
+    print(f"  {titulo}")
+    linha("-")
 
 class ServicoRecarga:
     """
